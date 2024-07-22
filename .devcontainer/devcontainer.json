@@ -1,0 +1,50 @@
+{
+	"name": "hfdemos",
+	"dockerComposeFile": [
+		"../.docker/docker-compose-dev.yml"
+	],
+	"remoteUser": "user",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.formatOnSave": false,
+				"git.ignoreMissingGitWarning": true,
+				"python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+				"python.languageServer": "Default",
+				"[python]": {
+					"editor.defaultFormatter": null,
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.fixAll": true
+					}
+				},
+				"ruff.enable": true,
+				"ruff.organizeImports": true,
+				"ruff.fixAll": true,
+				"ruff.configuration": "/workspace/pyproject.toml",
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.profiles.linux": {
+					"zsh": {
+						"path": "zsh"
+					}
+				},
+				"mypy-type-checker.cwd": "${workspaceFolder}",
+				"workbench.iconTheme": "vscode-icons",
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"timonwong.shellcheck",
+				"vscode-icons-team.vscode-icons",
+				"wayou.vscode-todo-highlight",
+				"github.copilot",
+				"ms-python.mypy-type-checker",
+				"charliermarsh.ruff"
+			]
+		}
+	},
+	"service": "hfdemos_dev",
+	"userEnvProbe": "loginInteractiveShell",
+	"workspaceFolder": "/workspace",
+	"features": {}
+}

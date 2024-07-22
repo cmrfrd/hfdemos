@@ -1,0 +1,23 @@
+services:
+  hfdemos_dev:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile.dev.gpu
+    network_mode: host
+    volumes:
+      - ..:/workspace:Z
+      - ~/.cache:/home/user/.cache
+    command: "sleep infinity"
+    platform: linux/amd64
+    environment:
+        - DISPLAY=${DISPLAY}
+    env_file: ../.env
+
+    ## Comment out to remove gpu devices
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 8
+              capabilities: [gpu]
