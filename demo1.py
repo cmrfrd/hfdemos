@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import math
 
 import torch
@@ -27,11 +28,11 @@ prompt0 = "A cute happy robot holding a sign that says 'Welcome to GPTuesday!'"
 prompt1 = "A high quality 1080p picture of Michael Jordan eating a human heart, blood on his face."
 prompt2 = "The word 'potato' on a piece of paper, sans-serif."
 result = pipe(  # type: ignore
-    prompt2,
+    prompt0,
     negative_prompt="",
     num_inference_steps=28,
     guidance_scale=7.0,
     num_images_per_prompt=4,
 )
 final_img = concat_nxn_imgs(result.images)
-final_img.save("imgs/test_text.png")
+final_img.save("data/test_text.png")
