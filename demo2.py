@@ -6,7 +6,7 @@ model = AutoModelForCausalLM.from_pretrained(
 ).eval()
 query = tokenizer.from_list_format(
     [
-        {"image": "./imgs/lean_docs.png"},
+        {"image": "./data/lean_docs.png"},
         {"text": "Can you please OCR this image?"},
     ]
 )
