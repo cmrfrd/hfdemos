@@ -36,6 +36,8 @@ bitsandbytes = "^0.43.1"
 torch = { version = "2.3.1+cu121", source = "pytorch-cuda" }
 fbgemm-gpu = { version = "^0.7.0", source = "pytorch-cuda" }
 jinja2 = "^3.1.4"
+loguru = "^0.7.2"
+pulp = "^2.9.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.4.2"
